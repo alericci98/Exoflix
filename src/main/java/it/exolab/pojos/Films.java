@@ -1,21 +1,32 @@
 package it.exolab.pojos;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @AllArgsConstructor
 @NoArgsConstructor
 public class Films {
 
-    private @Id @GeneratedValue int id_film;
+    private @Id @GeneratedValue Integer id_film;
+
+    @Column(name = "titolo",length = 45, nullable = false)
     private String titolo;
+
+    @Column(name = "durata",length = 45)
     private String durata;
+
+    @Column(name = "valutazione", nullable = false)
     private int valutazione;
+
+    @Column(name = "trama", length = 500)
     private String trama;
 
     @OneToOne
@@ -30,4 +41,17 @@ public class Films {
     @OneToOne
     @JoinColumn(name = "abbonamento_id_abbonamenti")
     private Abbonamenti abbonamento;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Films films = (Films) o;
+        return id_film != null && Objects.equals(id_film, films.id_film);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }
