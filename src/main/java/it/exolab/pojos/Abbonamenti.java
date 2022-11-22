@@ -16,6 +16,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Abbonamenti {
 
     private @Id @GeneratedValue Integer id_abbonamenti;

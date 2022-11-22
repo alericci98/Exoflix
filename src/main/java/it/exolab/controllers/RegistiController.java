@@ -22,16 +22,16 @@ public class RegistiController {
     private final RegistiRepository repo;
 
     @GetMapping("/registiFindAll")
-    List<Registi> allRegisti(){
+    public List<Registi> allRegisti(){
 
         return repo.findAll();
     }
 
     @GetMapping("/registi/{id}")
-    Registi oneRegisti(@PathVariable Integer id){
+    public Registi oneRegisti(@PathVariable Integer id){
         return repo.findById(id).orElseThrow(NullPointerException::new);
     }
 
-    
+
 
 }

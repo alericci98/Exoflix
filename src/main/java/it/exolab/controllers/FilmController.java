@@ -19,35 +19,35 @@ public class FilmController {
 
     private final FilmRepository repo;
 
-    @GetMapping("/findAll")
-    List<Films> allFilms(){
+    @GetMapping(value = "/findAll",consumes = "application/json")
+    public List<Films> allFilms(){
 
         return repo.findAll();
 
     }
 
     @GetMapping("//{id}")
-    Films oneFilm(@PathVariable Integer id){
+    public Films oneFilm(@PathVariable Integer id){
 
         return repo.findById(id).orElseThrow(NullPointerException::new);
 
     }
 
     @PostMapping("/films")
-    Films addFilm(@RequestBody Films film){
+   public Films addFilm(@RequestBody Films film){
 
         return repo.save(film);
 
     }
 
     @DeleteMapping("/films/{id}")
-    void deleteFilm(@PathVariable Integer id){
+    public void deleteFilm(@PathVariable Integer id){
 
         repo.deleteById(id);
     }
 
     @PutMapping("/films/{id}")
-    Films updateFilm(@RequestBody Films film, @PathVariable Integer id){
+    public Films updateFilm(@RequestBody Films film, @PathVariable Integer id){
 
         return repo.findById(id).map(f ->{
             f.setDurata(film.getDurata());
