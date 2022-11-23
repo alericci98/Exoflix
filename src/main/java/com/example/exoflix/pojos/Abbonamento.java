@@ -16,7 +16,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Abbonamenti {
+public class Abbonamento {
 
     private @Id @GeneratedValue Integer id_abbonamenti;
 
@@ -27,7 +27,7 @@ public class Abbonamenti {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Abbonamenti that = (Abbonamenti) o;
+        Abbonamento that = (Abbonamento) o;
         return id_abbonamenti != null && Objects.equals(id_abbonamenti, that.id_abbonamenti);
     }
 

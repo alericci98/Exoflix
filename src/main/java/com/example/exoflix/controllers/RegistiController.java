@@ -1,7 +1,7 @@
 package com.example.exoflix.controllers;
 
 
-import com.example.exoflix.pojos.Registi;
+import com.example.exoflix.pojos.Regista;
 import com.example.exoflix.services.RegistiService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +21,11 @@ public class RegistiController {
     private RegistiService registiService;
 
     @GetMapping(value = "/findAll", produces = "application/json")
-    public ResponseEntity<List<Registi>> trovaTuttiRegisti(){
-          log.info("Regista findAll Rest");
+    public ResponseEntity<List<Regista>> trovaTuttiRegisti(){
+          log.info("Regista.java findAll Rest");
         try {
-            List<Registi> registi=registiService.allRegisti();
-            return ResponseEntity.ok(registi);
+            List<Regista> regista =registiService.allRegisti();
+            return ResponseEntity.ok(regista);
         }
         catch (Exception e){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -34,10 +34,10 @@ public class RegistiController {
     }
 
     @GetMapping(value = "/findOne/{id}", produces = "application/json")
-    public ResponseEntity<Registi> trovaUnRegista(@PathVariable Integer id){
- log.info("Regista findOne Rest");
+    public ResponseEntity<Regista> trovaUnRegista(@PathVariable Integer id){
+ log.info("Regista.java findOne Rest");
         try {
-            Registi r= new Registi();
+            Regista r= new Regista();
             r=registiService.oneRegisti(id);
             return  ResponseEntity.ok(r);
         }

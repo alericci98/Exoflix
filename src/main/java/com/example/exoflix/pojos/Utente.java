@@ -12,7 +12,7 @@ import java.util.Objects;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class Utenti {
+public class Utente {
 
     private @Id @GeneratedValue Integer id_utenti;
 
@@ -36,14 +36,14 @@ public class Utenti {
 
     @OneToOne
     @JoinColumn(name = "abbonamento_id_abbonamenti")
-    private Abbonamenti abbonamento;
+    private Abbonamento abbonamento;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Utenti utenti = (Utenti) o;
-        return id_utenti != null && Objects.equals(id_utenti, utenti.id_utenti);
+        Utente utente = (Utente) o;
+        return id_utenti != null && Objects.equals(id_utenti, utente.id_utenti);
     }
 
     @Override

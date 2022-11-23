@@ -1,6 +1,6 @@
 package com.example.exoflix.services;
 
-import com.example.exoflix.pojos.Films;
+import com.example.exoflix.pojos.Film;
 import com.example.exoflix.repos.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,21 +15,21 @@ public class FilmService {
     private FilmRepository filmRepository;
 
 
-    public ResponseEntity<List<Films>> allFilms(){
+    public ResponseEntity<List<Film>> allFilms(){
 
-        List<Films> r= filmRepository.findAll();
+        List<Film> r= filmRepository.findAll();
         return ResponseEntity.ok(r);
 
     }
 
-    public Films oneFilm( Integer id){
+    public Film oneFilm(Integer id){
 
 
         return filmRepository.findById(id).orElseThrow(NullPointerException::new);
 
     }
 
-    public void saveFilm(Films film){
+    public void saveFilm(Film film){
 
         filmRepository.save(film);
 

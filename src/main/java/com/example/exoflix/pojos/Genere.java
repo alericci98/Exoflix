@@ -15,7 +15,7 @@ import java.util.Objects;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class Generi {
+public class Genere {
 
     private @Id @GeneratedValue Integer id_registi;
 
@@ -26,7 +26,7 @@ public class Generi {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Generi generi = (Generi) o;
+        Genere generi = (Genere) o;
         return id_registi != null && Objects.equals(id_registi, generi.id_registi);
     }
 

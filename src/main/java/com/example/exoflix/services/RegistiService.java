@@ -1,6 +1,6 @@
 package com.example.exoflix.services;
 
-import com.example.exoflix.pojos.Registi;
+import com.example.exoflix.pojos.Regista;
 import com.example.exoflix.repos.RegistiRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,13 +13,13 @@ public class RegistiService {
     private RegistiRepository registiRepo;
 
 
-    public List<Registi> allRegisti() {
+    public List<Regista> allRegisti() {
 
         return registiRepo.findAll();
     }
 
 
-    public Registi oneRegisti(Integer id) {
+    public Regista oneRegisti(Integer id) {
         return registiRepo.findById(id).orElseThrow(NullPointerException::new);
     }
 

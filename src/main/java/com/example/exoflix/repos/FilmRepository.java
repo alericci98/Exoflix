@@ -1,9 +1,9 @@
 package com.example.exoflix.repos;
 
-import com.example.exoflix.pojos.Films;
+import com.example.exoflix.pojos.Film;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FilmRepository extends JpaRepository<Films,Integer> {
+public interface FilmRepository extends JpaRepository<Film,Integer> {
 }

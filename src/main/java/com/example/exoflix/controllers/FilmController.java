@@ -1,7 +1,7 @@
 package com.example.exoflix.controllers;
 
 
-import com.example.exoflix.pojos.Films;
+import com.example.exoflix.pojos.Film;
 import com.example.exoflix.services.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,31 +19,31 @@ public class FilmController {
     private FilmService filmService;
 
     @GetMapping(value = "/findAll", produces = "application/json")
-    public ResponseEntity<List<Films>> trovaTuttoFilm(){
+    public ResponseEntity<List<Film>> trovaTuttoFilm(){
         return filmService.allFilms();
     }
 
     @GetMapping(value = "/findOne/{id}",produces = "application/json")
-    public ResponseEntity<Films> trovaUnFilm(@PathVariable Integer id){
-        Films films= new Films();
+    public ResponseEntity<Film> trovaUnFilm(@PathVariable Integer id){
+        Film film = new Film();
         try {
-           films= filmService.oneFilm(id);
-            return ResponseEntity.ok(films);
+           film = filmService.oneFilm(id);
+            return ResponseEntity.ok(film);
         }
         catch (Exception e) {
-            return new ResponseEntity<Films>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<Film>(HttpStatus.BAD_REQUEST);
         }
 
     }
 
     @PostMapping(value = "/add", produces = "application/json", consumes = "application/json")
-    public ResponseEntity<Films> aggiungiUnFilm(@RequestBody Films film){
+    public ResponseEntity<Film> aggiungiUnFilm(@RequestBody Film film){
        try {
            filmService.saveFilm(film);
            return ResponseEntity.ok(film);
        } catch(Exception e){
            System.out.println(e.getMessage());
-           return new  ResponseEntity<Films>(HttpStatus.BAD_REQUEST);
+           return new  ResponseEntity<Film>(HttpStatus.BAD_REQUEST);
        }
     }
 

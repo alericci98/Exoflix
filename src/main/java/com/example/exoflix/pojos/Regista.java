@@ -13,7 +13,7 @@ import java.util.Objects;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class Registi {
+public class Regista {
 
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,8 +36,8 @@ public class Registi {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Registi registi = (Registi) o;
-        return id_registi != null && Objects.equals(id_registi, registi.id_registi);
+        Regista regista = (Regista) o;
+        return id_registi != null && Objects.equals(id_registi, regista.id_registi);
     }
 
     @Override

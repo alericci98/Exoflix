@@ -12,7 +12,7 @@ import java.util.Objects;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class Films {
+public class Film {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer id_film;
@@ -35,19 +35,19 @@ public class Films {
 */
     @OneToOne
     @JoinColumn(name = "genere_id_registi")
-    private Generi genere;
+    private Genere genere;
 
 
     @OneToOne
     @JoinColumn(name = "abbonamento_id_abbonamenti")
-    private Abbonamenti abbonamento;
+    private Abbonamento abbonamento;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Films films = (Films) o;
-        return id_film != null && Objects.equals(id_film, films.id_film);
+        Film film = (Film) o;
+        return id_film != null && Objects.equals(id_film, film.id_film);
     }
 
     @Override
