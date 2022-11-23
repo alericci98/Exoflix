@@ -1,0 +1,17 @@
+com\example\repos\AbbonamentiRepository.class
+com\example\services\UtentiService.class
+com\example\pojos\Abbonamenti.class
+com\example\repos\RegistiRepository.class
+com\example\pojos\Registi.class
+com\example\services\FilmService.class
+com\example\repos\FilmRepository.class
+com\example\exoflix\ExoflixApplication.class
+com\example\pojos\Generi.class
+com\example\services\RegistiService.class
+com\example\pojos\Utenti.class
+com\example\repos\GeneriRepository.class
+com\example\controllers\UtentiController.class
+com\example\controllers\FilmController.class
+com\example\pojos\Films.class
+com\example\repos\UtentiRepository.class
+com\example\controllers\RegistiController.class
