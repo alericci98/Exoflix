@@ -15,10 +15,9 @@ public class FilmService {
     private FilmRepository filmRepository;
 
 
-    public ResponseEntity<List<Film>> allFilms(){
+    public List<Film> allFilms(){
 
-        List<Film> r= filmRepository.findAll();
-        return ResponseEntity.ok(r);
+        return filmRepository.findAll();
 
     }
 

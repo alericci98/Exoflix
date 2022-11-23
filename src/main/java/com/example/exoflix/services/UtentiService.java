@@ -13,17 +13,23 @@ public class UtentiService {
     private UtentiRepository utentiRepository;
 
 
-    public ResponseEntity<List<Utente>> findAll() {
-        List<Utente> utente = utentiRepository.findAll();
-        return ResponseEntity.ok(utente);
+    public List<Utente> findAll() {
+
+        return utentiRepository.findAll();
     }
 
-    public ResponseEntity<Utente> findOne(Integer id){
-        Utente r= utentiRepository.findById(id).orElseThrow(NullPointerException::new);
-        return  ResponseEntity.ok(r);
+    public Utente findOne(Integer id){
+
+        return utentiRepository.findById(id).orElseThrow(NullPointerException::new);
     }
 
     public void saveUtenti(Utente utente){
+
         utentiRepository.save(utente);
+    }
+
+    public void deleteUtenti(Integer id){
+
+        utentiRepository.deleteById(id);
     }
 }

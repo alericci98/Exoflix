@@ -20,6 +20,8 @@ public class RegistiService {
 
 
     public Regista oneRegisti(Integer id) {
+
+
         return registiRepo.findById(id).orElseThrow(NullPointerException::new);
     }
 
