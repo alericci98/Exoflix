@@ -20,6 +20,8 @@ public class RegistaController {
     @Autowired
     private RegistaService registaService;
 
+
+
     @GetMapping(value = "/findAll", produces = "application/json")
     public ResponseEntity<List<Regista>> trovaTuttiRegisti(){
           log.info("Regista.java findAll Rest");

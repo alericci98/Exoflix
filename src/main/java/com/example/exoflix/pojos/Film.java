@@ -28,15 +28,14 @@ public class Film {
 
     @Column(name = "trama", length = 500)
     private String trama;
-/*
+
     @OneToOne
     @JoinColumn(name = "regista_id_registi")
-    private Registi regista;
-*/
+    private Regista regista;
+
     @OneToOne
     @JoinColumn(name = "genere_id_registi")
     private Genere genere;
-
 
     @OneToOne
     @JoinColumn(name = "abbonamento_id_abbonamenti")

@@ -2,7 +2,6 @@ package com.example.exoflix.controllers;
 
 import com.example.exoflix.pojos.Utente;
 import com.example.exoflix.services.UtenteService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,11 +12,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/generi")
 @CrossOrigin("*")
-@Slf4j
 public class UtenteController {
 
     @Autowired
     private UtenteService utenteService;
+
+
 
     @GetMapping(value = "/trovaTutti", produces = "application/json")
     public ResponseEntity<List<Utente>> trovaTutti(){
@@ -42,7 +42,6 @@ public class UtenteController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
-
 
     @DeleteMapping(value = "/cancellaUno/{id}", produces =  "application/json")
     public ResponseEntity<String> cancellaUno(@PathVariable Integer id){

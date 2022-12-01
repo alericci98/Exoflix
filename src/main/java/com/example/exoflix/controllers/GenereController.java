@@ -19,6 +19,8 @@ public class GenereController {
     @Autowired
     private GenereService genereService;
 
+
+
     @GetMapping(value = "/trovaTutto", produces = "application/json")
     public ResponseEntity<List<Genere>> trovaGeneri(){
 

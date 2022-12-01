@@ -19,6 +19,8 @@ public class AbbonamentoController {
     @Autowired
     private AbbonamentoService abbonamentoService;
 
+
+
     @GetMapping(value = "/trovaTutto", produces = "application/json")
     public ResponseEntity<List<Abbonamento>> trovaTutto(){
         try {
