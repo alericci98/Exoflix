@@ -32,6 +32,8 @@ public class Regista {
     @Column(name = "candidature_oscar")
     private int candidature_oscar;
 
+    
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

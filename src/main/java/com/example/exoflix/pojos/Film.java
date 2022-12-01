@@ -30,7 +30,7 @@ public class Film {
     @Column(name = "trama", length = 500)
     private String trama;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "regista_id_registi")
     private Regista regista;
 
