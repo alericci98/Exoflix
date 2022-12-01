@@ -12,6 +12,7 @@ import java.util.Objects;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "films")
 public class Film {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

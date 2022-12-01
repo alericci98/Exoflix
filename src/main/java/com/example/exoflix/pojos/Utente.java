@@ -12,6 +12,7 @@ import java.util.Objects;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "utenti")
 public class Utente {
 
     private @Id @GeneratedValue Integer id_utenti;

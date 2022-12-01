@@ -7,12 +7,12 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "registi")
 @Getter
 @Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "registi")
 public class Regista {
 
      @Id
