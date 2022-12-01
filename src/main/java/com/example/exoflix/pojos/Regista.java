@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -32,7 +33,8 @@ public class Regista {
     @Column(name = "candidature_oscar")
     private int candidature_oscar;
 
-    
+    @OneToMany(mappedBy="regista", targetEntity = Film.class)
+    private List<Film> films;
 
     @Override
     public boolean equals(Object o) {

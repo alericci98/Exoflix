@@ -35,7 +35,7 @@ public class Utente {
     @Column(name = "password", nullable = false, length = 45)
     private String password;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "abbonamento_id_abbonamenti")
     private Abbonamento abbonamento;
 

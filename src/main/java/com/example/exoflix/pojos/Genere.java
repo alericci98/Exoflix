@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -19,6 +20,10 @@ public class Genere {
 
     @Column(name = "nome", nullable = false, unique = true)
     private String nome;
+
+    @OneToMany(mappedBy="genere",targetEntity =Film.class )
+    private List<Film> films;
+
 
     @Override
     public boolean equals(Object o) {

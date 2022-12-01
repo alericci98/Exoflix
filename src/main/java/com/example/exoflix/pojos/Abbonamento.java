@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -19,6 +20,14 @@ public class Abbonamento {
 
     @Column(name = "tipologia", nullable = false, unique = true, length = 45)
     private String tipologia;
+
+    @OneToMany(mappedBy="abbonamento", targetEntity = Film.class)
+    private List<Film> films;
+
+    @OneToMany(mappedBy="abbonamento", targetEntity = Utente.class)
+    private List<Utente> utenti;
+
+
 
     @Override
     public boolean equals(Object o) {

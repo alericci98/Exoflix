@@ -34,11 +34,11 @@ public class Film {
     @JoinColumn(name = "regista_id_registi")
     private Regista regista;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "genere_id_registi")
     private Genere genere;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "abbonamento_id_abbonamenti")
     private Abbonamento abbonamento;
 
