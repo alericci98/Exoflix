@@ -1,16 +1,16 @@
 package com.example.exoflix.services;
 
 import com.example.exoflix.pojos.Regista;
-import com.example.exoflix.repos.RegistiRepository;
+import com.example.exoflix.repos.RegistaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class RegistiService {
+public class RegistaService {
     @Autowired
-    private RegistiRepository registiRepo;
+    private RegistaRepository registiRepo;
 
 
     public List<Regista> allRegisti() {

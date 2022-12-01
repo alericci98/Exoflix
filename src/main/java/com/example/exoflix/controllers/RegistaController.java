@@ -2,7 +2,7 @@ package com.example.exoflix.controllers;
 
 
 import com.example.exoflix.pojos.Regista;
-import com.example.exoflix.services.RegistiService;
+import com.example.exoflix.services.RegistaService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,16 +15,16 @@ import java.util.List;
 @CrossOrigin("*")
 @RequestMapping(value = "/registi")
 @Slf4j
-public class RegistiController {
+public class RegistaController {
 
     @Autowired
-    private RegistiService registiService;
+    private RegistaService registaService;
 
     @GetMapping(value = "/findAll", produces = "application/json")
     public ResponseEntity<List<Regista>> trovaTuttiRegisti(){
           log.info("Regista.java findAll Rest");
         try {
-            List<Regista> regista =registiService.allRegisti();
+            List<Regista> regista = registaService.allRegisti();
             return ResponseEntity.ok(regista);
         }
         catch (Exception e){
@@ -38,7 +38,7 @@ public class RegistiController {
  log.info("Regista.java findOne Rest");
         try {
             Regista r= new Regista();
-            r=registiService.oneRegisti(id);
+            r= registaService.oneRegisti(id);
             return  ResponseEntity.ok(r);
         }
         catch (Exception e) {

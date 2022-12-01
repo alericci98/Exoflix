@@ -1,16 +1,17 @@
 package com.example.exoflix.services;
 
 import com.example.exoflix.pojos.Utente;
-import com.example.exoflix.repos.UtentiRepository;
+import com.example.exoflix.repos.UtenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class UtentiService {
+@Service
+public class UtenteService {
 
     @Autowired
-    private UtentiRepository utentiRepository;
+    private UtenteRepository utentiRepository;
 
 
     public List<Utente> findAll() {
