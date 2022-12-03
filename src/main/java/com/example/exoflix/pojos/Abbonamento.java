@@ -16,7 +16,9 @@ import java.util.Objects;
 @Table(name = "abbonamenti")
 public class Abbonamento {
 
-    private @Id @GeneratedValue Integer id_abbonamenti;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_abbonamenti;
 
     @Column(name = "tipologia", nullable = false, unique = true, length = 45)
     private String tipologia;

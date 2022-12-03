@@ -15,7 +15,10 @@ import java.util.Objects;
 @Table(name = "utenti")
 public class Utente {
 
-    private @Id @GeneratedValue Integer id_utenti;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id_utenti;
 
     @Column(name = "nome", length = 45, nullable = false)
     private String nome;

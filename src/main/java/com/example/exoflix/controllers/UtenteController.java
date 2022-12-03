@@ -31,7 +31,7 @@ public class UtenteController {
         }
     }
 
-    @GetMapping(value = "/trovaUno/{id}", produces =  "application/json")
+    @GetMapping(value = "/trovaUnUtente/{id}", produces =  "application/json")
     public ResponseEntity<Utente> trovaUno(@PathVariable Integer id){
 
         try{

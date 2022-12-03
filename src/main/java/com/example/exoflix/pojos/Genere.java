@@ -16,7 +16,10 @@ import java.util.Objects;
 @Table(name = "generi")
 public class Genere {
 
-    private @Id @GeneratedValue Integer id_registi;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_registi;
 
     @Column(name = "nome", nullable = false, unique = true)
     private String nome;

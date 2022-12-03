@@ -20,7 +20,6 @@ public class GenereController {
     private GenereService genereService;
 
 
-
     @GetMapping(value = "/trovaTutto", produces = "application/json")
     public ResponseEntity<List<Genere>> trovaGeneri(){
 
@@ -34,7 +33,7 @@ public class GenereController {
     }
 
     @GetMapping(value = "/trovaUno/{id}", produces = "application/json")
-    public ResponseEntity<Genere> trovaUnGenere(@PathVariable Integer id){
+    public ResponseEntity<Genere> trovaUnoGenere(@PathVariable Integer id){
 
         try {
             Genere gen= genereService.trovaUnGenere(id);

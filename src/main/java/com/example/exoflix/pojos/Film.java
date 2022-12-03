@@ -15,7 +15,8 @@ import java.util.Objects;
 @Table(name = "films")
 public class Film {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer id_film;
 
     @Column(name = "titolo",length = 45, nullable = false)
