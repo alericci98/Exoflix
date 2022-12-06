@@ -39,7 +39,7 @@ public class Utente {
     private String password;
 
     @ManyToOne
-    @JoinColumn(name = "abbonamento_id_abbonamenti")
+    @JoinColumn(name = "id_abbonamento")
     private Abbonamento abbonamento;
 
     @Override

@@ -12,7 +12,7 @@ import java.util.Objects;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "films")
+@Table(name = "film")
 public class Film {
 
     @Id
@@ -32,15 +32,15 @@ public class Film {
     private String trama;
 
     @ManyToOne
-    @JoinColumn(name = "regista_id_registi")
+    @JoinColumn(name = "id_regista")
     private Regista regista;
 
     @ManyToOne
-    @JoinColumn(name = "genere_id_registi")
+    @JoinColumn(name = "id_genere")
     private Genere genere;
 
     @ManyToOne
-    @JoinColumn(name = "abbonamento_id_abbonamenti")
+    @JoinColumn(name = "id_abbonamento")
     private Abbonamento abbonamento;
 
     @Override
