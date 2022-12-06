@@ -84,7 +84,7 @@ public class FilmController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
-    @PostMapping(value = "/add", produces = "application/json", consumes = "application/json")
+    @PostMapping(value = "/save", produces = "application/json", consumes = "application/json")
     public ResponseEntity<Film> aggiungiUnFilm(@RequestBody Film film) {
         try {
             filmService.saveFilm(film);

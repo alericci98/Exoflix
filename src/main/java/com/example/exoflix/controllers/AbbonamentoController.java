@@ -21,7 +21,7 @@ public class AbbonamentoController {
 
 
 
-    @GetMapping(value = "/trovaTutto", produces = "application/json")
+    @GetMapping(value = "/findAll", produces = "application/json")
     public ResponseEntity<List<Abbonamento>> trovaTutto(){
         try {
 
@@ -33,7 +33,7 @@ public class AbbonamentoController {
         }
     }
 
-    @GetMapping(value = "/trovaUno/{id}", produces = "application/json")
+    @GetMapping(value = "/findOne/{id}", produces = "application/json")
     public ResponseEntity<Abbonamento> trovaUno(@PathVariable Integer id){
 
         try {

@@ -19,7 +19,7 @@ public class UtenteController {
 
 
 
-    @GetMapping(value = "/trovaTutti", produces = "application/json")
+    @GetMapping(value = "/findAll", produces = "application/json")
     public ResponseEntity<List<Utente>> trovaTutti(){
 
         try {
@@ -31,7 +31,7 @@ public class UtenteController {
         }
     }
 
-    @GetMapping(value = "/trovaUnUtente/{id}", produces =  "application/json")
+    @GetMapping(value = "/findOne/{id}", produces =  "application/json")
     public ResponseEntity<Utente> trovaUno(@PathVariable Integer id){
 
         try{
@@ -43,7 +43,7 @@ public class UtenteController {
         }
     }
 
-    @DeleteMapping(value = "/cancellaUno/{id}", produces =  "application/json")
+    @DeleteMapping(value = "/delete/{id}", produces =  "application/json")
     public ResponseEntity<String> cancellaUno(@PathVariable Integer id){
 
         try {
@@ -55,7 +55,7 @@ public class UtenteController {
         }
     }
 
-    @PostMapping(value = "/add", produces =  "application/json")
+    @PostMapping(value = "/save", produces =  "application/json")
     public ResponseEntity<Utente> salvaUno(@RequestBody Utente utente){
 
         try {
