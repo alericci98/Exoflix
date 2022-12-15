@@ -12,10 +12,10 @@ import java.util.List;
 @Repository
 public interface FilmRepository extends JpaRepository<Film,Integer> {
 
-    @Query("select f from Film f where f.abbonamento = ?1 order by  f.titolo")
+    @Query("select f from Film f where f.abbonamento.tipologia like ?1% order by  f.titolo")
     List<Film> FindByPremiumFilms(Abbonamento abbonamento);
 
-    @Query("select f from Film f where f.regista=?1")
+    @Query("select f from Film f where f.regista.cognome like ?1%")
     List<Film> FindByRegista(Regista regista);
 
 
